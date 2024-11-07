@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tax Solution Experts</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header class="navbar">
+            <div class="navbar-brand">
+                <img src="imgs/logo.png" alt="Tax Solution Experts Logo" class="navbar-logo">
+                <h1>Tax Solution Experts</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#who-we-are">Who We Are</a>
+                <a href="#mission">Our Mission</a>
+                <a href="#owner">Our Owner</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </header>
+
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <section id="welcome">
+                <div class="welcome-box">
+                    <h1>Welcome to <span class="highlight">Tax Solution Experts</span></h1>
+                    <p>Providing top-quality accounting services for your needs.</p>
+                    <button class="button" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })">Learn More</button>
+                    <button class="button" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Get Started</button>
+                </div>
+            </section>
+            <div class="welcome-image">
+                <img src="imgs/logo.png" alt="Welcome Image" width="400px">
+            </div>
+        </div>
+        
+        <section class="who-we-are-container" id="who-we-are">
+            <div class="who-we-are-image">
+                <img src="imgs/team.jpg" alt="Who We Are">
+            </div>
+            <div class="who-we-are-box">
+                <div class="who-we-are-content">
+                    <h2>Who We Are</h2>
+                    <p>We are a dedicated team focused on delivering top-notch tax solutions.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Mission and Our Owner Section -->
+        <div class="info-boxes">
+            <div class="info-box" id="mission">
+                <img src="imgs/Mission.jpg" alt="Our Mission">
+                <div class="info-content">
+                    <h3>Our Mission</h3>
+                    <p>We are dedicated to providing exceptional tax and accounting services that empower individuals and businesses to achieve financial clarity and success. Through personalized strategies, integrity, and expertise, we strive to build lasting relationships with our clients, ensuring they navigate the complexities of finance with confidence. Our commitment to excellence drives us to deliver timely, accurate solutions that foster growth, compliance, and peace of mind.</p>
+                </div>
+            </div>
+            <div class="info-box" id="owner">
+                <img src="imgs/Daniela.jpeg" alt="Our Owner">
+                <div class="info-content">
+                    <h3>Our Owner</h3>
+                    <p>Daniela Gomez Gil is the dedicated owner of our accounting firm, bringing two years of professional experience to provide reliable and customized financial solutions. Known for attention to detail and a commitment to client success, Daniela is passionate about helping clients navigate their financial needs with confidence and precision.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Services Overview Section with Button for Modal -->
+        <section class="services-overview" id="services">
+            <div class="services-box">
+                <div class="services-text">
+                    <h2>Our Services</h2>
+                    <p>Discover the range of accounting services we offer.</p>
+                    <button class="button" onclick="openModal()">View Services</button>
+                </div>
+            </div>
+            <div class="services-image">
+                <img src="imgs/office.jpg" alt="Our Services Image">
+            </div>
+        </section>
+        
+        <!-- Services Carousel Section -->
+        <section class="carousel-container">
+            <h2>Our Services</h2>
+            <div class="carousel" id="carousel">
+                <div class="carousel-item">
+                    <img src="imgs/personal_tax.svg" alt="Individual Tax Icon" class="icon">
+                    <h3>Individual Tax Preparation</h3>
+                    <p>Efficiently file your taxes.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="imgs/corporate_tax.svg" alt="Corporate Tax Icon" class="icon">
+                    <h3>Corporate Tax Preparation</h3>
+                    <p>Efficiently file your business taxes.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="imgs/payroll.svg" alt="Payroll" class="icon">
+                    <h3>Payroll Services</h3>
+                    <p>Manage your company payroll.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="imgs/bookkeeping.svg" alt="Bookkeeping" class="icon">
+                    <h3>Bookkeeping</h3>
+                    <p>Keep accurate financial records.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="imgs/itin_application.svg" alt="ITIN Application" class="icon">
+                    <h3>ITIN Application and Renovation</h3>
+                    <p>Assist with ITIN applications and renewals.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="imgs/new_business.svg" alt="New Business" class="icon">
+                    <h3>New Company Filing and Dissolution</h3>
+                    <p>Help with business setup and closure.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="imgs/personal_consulting.svg" alt="Personal Consulting" class="icon">
+                    <h3>Individual Consulting</h3>
+                    <p>Get personalized financial advice.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="imgs/business_consulting.svg" alt="Business Consulting" class="icon">
+                    <h3>Business Consulting</h3>
+                    <p>Expert advice for your business.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="imgs/irs_representation.svg" alt="IRS Representation" class="icon">
+                    <h3>IRS Representation</h3>
+                    <p>Representation for IRS-related issues.</p>
+                </div>
+            </div>
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </section>
+        
+        <!-- Modal -->
+        <div class="modal" id="servicesModal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Our Services</h3>
+                <ul>
+                    <li>Individual Tax Return</li>
+                    <li>Corporate Tax Return</li>
+                    <li>Payroll Services</li>
+                    <li>ITIN Application and Renovation</li>
+                    <li>Bookkeeping</li>
+                    <li>Personal Consulting</li>
+                    <li>IRS Representation</li>
+                    <li>New Company Filing and Dissolution</li>
+                </ul>
+            </div>
+        </div>
+
+    <!-- Connect With Us Section -->
+    <section class="connect-with-us">
+            <div class="connect-image">
+                <img src="imgs/instagram_pic.png" alt="Connect With Us">
+            </div>
+            <div class="social-links">
+                <div class="social-box">
+                    <h2>Connect With Us</h2>
+                    <p>Follow us on social media to stay updated with the latest news and insights.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/people/Daniela-Gomez-Gil/pfbid02TTra1jYASJMtuyPMLGeJKLLV6gDbxNqMRz8gCiDsHN5FDxBZW2Nn3GfZS3zvjBtsl/?mibextid=LQQJ4d&rdid=kv2ePTexBg4a20ND&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fp3i1FCaJrjfekRYq%2F%3Fmibextid%3DLQQJ4d" target="_blank" aria-label="Facebook">
+                            <img src="imgs/facebook logo_icon.svg" alt="Facebook Icon" width="50" height="50">
+                        </a>
+                        <a href="https://www.instagram.com/taxsolutionexpertsllc/profilecard/?igsh=MTFza3c0NTQxcjJwcQ==" target="_blank" aria-label="Instagram">
+                            <img src="imgs/instagram_logo.svg" alt="Instagram Icon" width="50" height="50">
+                        </a>
+                        <a href="https://www.linkedin.com/in/daniela-gomez-gil-b00828204?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn">
+                            <img src="imgs/linkedin_logo.svg" alt="LinkedIn Icon" width="50" height="50">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact and Headquarters Section with Interactive Map -->
+        <section class="contact-container">
+            <div class="contact-details">
+                <div class="contact-info" id="contact">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch with us for any inquiries.</p>
+                    <p>Phone: <a href="tel:+17862385173">+1 (786) 238-5173</a></p>
+                    <p>Email: <a href="mailto:dgomeztaxsolutionexperts@gmail.com">dgomeztaxsolutionexperts@gmail.com</a></p>
+                </div>
+                <div class="headquarters">
+                    <h2>Headquarters</h2>
+                    <p>11890 SW 8th St Suite 512</p>
+                    <p>Miami, FL 33184</p>
+                    <p>United States</p>
+                </div>
+            </div>
+            
+            <!-- Interactive Map Embed -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.3021709050677!2d-80.39101798938601!3d25.760580977258122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9bf187829e63f%3A0x4bfd72b3bd82d30!2s11890%20SW%208th%20St%2C%20Miami%2C%20FL%2033184!5e0!3m2!1sen!2sus!4v1730675375813!5m2!1sen!2sus" 
+                width="100%" 
+                height="400" 
+                allowfullscreen="" 
+                loading="lazy" 
+                class="map-embed" 
+                aria-label="Google Maps Location of Headquarters">
+            </iframe>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Tax Solution Experts. All Rights Reserved.</p>
+        </footer>
+        <script src="scripts.js"></script>
+
+    </body>
+</html>
