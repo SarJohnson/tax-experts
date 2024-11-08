@@ -19,7 +19,7 @@
 
         /* Apply Background Image to the Entire Page */
         body {
-            background-image: url('imgs/buildings.jpg'); /* Replace with your image path */
+            background-image: url('imgs/buildings.jpg'); 
             background-size: cover;           /* Ensures the image covers the whole viewport */
             background-position: center;
             background-repeat: no-repeat;
@@ -90,7 +90,24 @@
         .navbar .nav-links a:hover {
             color: #ff9800;
         }
-        
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            color: #1e3a5f;
+            background-color: white;
+            margin: 3px;
+            border-radius: 5px;
+        }
+                
         /* Responsive Navbar */
         @media (max-width: 768px) {
             .navbar .nav-links {
@@ -98,6 +115,29 @@
                 flex-direction: column;
                 gap: 0.5rem;
                 text-align: center;
+            }
+            .nav-links {
+                display: none; /* Hide the menu by default */
+                flex-direction: column; /* Stack the items vertically */
+                width: 100%; /* Make the menu take up full width */
+                position: absolute; /* Position it as a dropdown */
+                top: 60px; /* Below the navbar */
+                left: 0;
+                background-color: #1e3a5f; /* Same background as navbar */
+            }
+        
+            .nav-links a {
+                text-align: center;
+                margin: 15px 0; /* Add spacing between items */
+            }
+        
+            .menu-toggle {
+                display: flex; /* Show the hamburger menu on smaller screens */
+            }
+        
+            /* Show the menu when it's toggled */
+            .nav-links.active {
+                display: flex;
             }
         }
 
@@ -229,12 +269,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 2rem;
             color: #333;
             border-radius: 8px;
-            gap: 2rem;
+            gap: 10rem;
         }
 
         /* White Background Box for Services Text */
@@ -445,12 +485,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
             padding: 2rem;
             color: #333;
             border-radius: 8px;
-            gap: 2rem;
+            gap: 10rem;
         }
 
         /* White Background Box for Services Text */
@@ -578,19 +618,35 @@
             transform: scale(1.1);
         }
 
+        .social-icons a img {
+            width: 100%;              /* Fill the icon container */
+            height: 100%;
+            object-fit: cover;        /* Ensures the image covers the container without stretching */
+            border-radius: 50%;       /* Ensures the image itself is circular */
+        }
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .connect-with-us {
                 flex-direction: column;
             }
-
+        
+            .social-box {
+                padding: 1.5rem;
+            }
+        
+            /* Adjust social icons for smaller screens */
+            .social-icons {
+                flex-wrap: wrap; /* Allows icons to wrap on smaller screens */
+            }
+        
             .social-icons a {
-                width: 40px;
+                width: 40px; /* Slightly smaller icons on mobile */
                 height: 40px;
             }
-
-            .connect-image {
-                margin-right: 0; 
+        
+            .social-links h2 {
+                font-size: 1.5rem; /* Smaller font size for headings on mobile */
             }
         }
 
@@ -645,7 +701,24 @@
         @media (max-width: 768px) {
             .contact-details {
                 flex-direction: column;
+                justify-content: center; /* Centers the sections horizontally */
+                align-items: center;
                 text-align: center;
+                gap: 1.5rem; /* Adds spacing between sections */
+            }
+            
+            .contact-info, .headquarters {
+                max-width: 80%; /* Controls the width on smaller screens */
+                margin: 0 auto;
+            }
+            
+            /* Adjust font size for smaller screens */
+            .contact-info h2, .headquarters h2 {
+                font-size: 1.5rem;
+            }
+        
+            .contact-info p, .headquarters p {
+                font-size: 1rem;
             }
         }
 

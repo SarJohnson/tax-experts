@@ -40,22 +40,35 @@
             }
         }
 
-        // Function to scroll with offset for fixed navbar
-        function scrollToSection(event) {
-            event.preventDefault(); // Prevent the default link behavior
-            const targetId = event.currentTarget.getAttribute("href").substring(1); // Get the ID without the #
-            const targetElement = document.getElementById(targetId);
-
-            // Calculate the offset position
-            const offsetPosition = targetElement.offsetTop - 60; // Adjust 60px to match navbar height
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth" // Smooth scroll effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.querySelector('.nav-links');
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar.offsetHeight;
+        
+            // Toggle the mobile menu
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
             });
-        }
-
-        // Add event listeners to each navbar link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', scrollToSection);
+        
+            // Add smooth scroll with offset adjustment
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+        
+                    // Calculate the offset position, adjusting for the navbar height
+                    const offsetPosition = targetElement.offsetTop - navbarHeight;
+        
+                    // Scroll to the calculated position
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+        
+                    // Close the mobile menu after clicking a link (if open)
+                    navLinks.classList.remove('active');
+                });
+            });
         });
